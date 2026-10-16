@@ -197,6 +197,7 @@
             z-index: 2;
         }
 
+        /* تعديل نسب العرض: تقليل About Me وزيادة مساحة الرادار */
         .about-section-wrapper {
             display: flex;
             align-items: stretch;
@@ -213,7 +214,7 @@
             padding: 22px;
             box-shadow: inset 0 3px 12px rgba(0,0,0,0.4), 0 15px 30px rgba(0,0,0,0.3);
             border: 1px solid #5d6163;
-            flex: 2.5;
+            flex: 2; /* تم تقليل العرض قليلاً هنا */
         }
 
         .card-about-compact {
@@ -233,17 +234,17 @@
             padding: 20px;
             box-shadow: inset 0 3px 12px rgba(0,0,0,0.4), 0 15px 30px rgba(0,0,0,0.3);
             border: 1px solid #5d6163;
-            flex: 1;
+            flex: 1.3; /* تم زيادة العرض هنا ليأخذ مساحة أكبر */
             display: flex;
             align-items: center;
             justify-content: center;
-            max-width: 320px;
+            max-width: 400px; /* زيادة الحد الأقصى للعرض */
         }
 
         .card-radar-compact {
             background: #0d1117;
             border-radius: 20px;
-            padding: 18px;
+            padding: 20px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.3);
             position: relative;
             border: 1px solid #30363d;
@@ -257,15 +258,15 @@
 
         .radar-box {
             position: relative;
-            width: 185px;
-            height: 185px;
+            width: 215px; /* تكبير حجم الرادار قليلاً ليتناسب مع المساحة الجديدة */
+            height: 215px;
             border-radius: 50%;
             border: 1.5px solid rgba(217, 119, 6, 0.5);
             box-shadow: 0 0 25px rgba(217, 119, 6, 0.25), inset 0 0 15px rgba(0,0,0,0.8);
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 10px 0;
+            margin: 12px 0;
             overflow: hidden;
             background: radial-gradient(circle, rgba(13, 148, 136, 0.08) 0%, rgba(13, 17, 23, 0.95) 85%);
         }
@@ -291,8 +292,8 @@
         .radar-box::before {
             content: '';
             position: absolute;
-            width: 120px;
-            height: 120px;
+            width: 140px;
+            height: 140px;
             border-radius: 50%;
             border: 1px dashed rgba(255, 255, 255, 0.25);
         }
@@ -300,8 +301,8 @@
         .radar-box::after {
             content: '';
             position: absolute;
-            width: 60px;
-            height: 60px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
             border: 1px solid rgba(217, 119, 6, 0.3);
         }
@@ -338,8 +339,8 @@
 
         .satellite-orbit-path {
             position: absolute;
-            width: 160px;
-            height: 70px;
+            width: 185px;
+            height: 85px;
             border: 1px dashed rgba(59, 130, 246, 0.5);
             border-radius: 50%;
             transform: rotate(-30deg);
@@ -516,7 +517,6 @@
             align-items: center;
         }
 
-        /* عنصر عنوان "ABOUT ME" خاص بالموبايل ليكون فوق الصورة تماماً */
         .mobile-about-header {
             display: none;
             font-size: 10.5px;
@@ -727,9 +727,7 @@
             .showcase-screen { grid-template-columns: 1fr; }
             .about-grid-layout { grid-template-columns: 1fr; justify-items: center; text-align: center; }
             
-            /* إظهار كلمة ABOUT ME وحدها فوق الصورة على الهواتف */
             .mobile-about-header { display: block; }
-            /* إخفاء العنوان من الجهة اليمنى في الموبايل لكي لا يتكرر */
             .desktop-about-header { display: none; }
             
             .info-stats-grid { grid-template-columns: 1fr; }
@@ -793,12 +791,12 @@
         <section id="about">
             <div class="about-section-wrapper">
                 
-                <!-- الإطار الرمادي اليساري الرئيسي والأكبر -->
+                <!-- الإطار الرمادي اليساري (تم تصغير عرضه قليلاً) -->
                 <div class="showcase-screen-about-left">
                     <div class="card-about-compact">
                         <div class="about-grid-layout">
                             
-                            <!-- عمود الصورة والأزرار (وعليه كلمة ABOUT ME فوقه في الهواتف) -->
+                            <!-- عمود الصورة والأزرار -->
                             <div class="about-left-column">
                                 <div class="mobile-about-header">
                                     <span>✦ ABOUT ME</span>
@@ -811,7 +809,7 @@
                                 </div>
                             </div>
 
-                            <!-- عمود النصوص والتفاصيل والبطاقات على اليمين -->
+                            <!-- عمود النصوص والتفاصيل على اليمين -->
                             <div class="about-right-column">
                                 <div class="card-header desktop-about-header" style="justify-content: flex-start; margin-bottom: 6px;">
                                     <span>✦ ABOUT ME</span>
@@ -853,7 +851,7 @@
                     </div>
                 </div>
 
-                <!-- الإطار الرمادي اليميني المطوّر: مستشعر جيوماتيكي ثلاثي الأبعاد -->
+                <!-- الإطار الرمادي اليميني للرادار (تم زيادة عرضه ومساحته) -->
                 <div class="showcase-screen-about-right">
                     <div class="card-radar-compact">
                         <div class="radar-header-tag">
@@ -940,7 +938,7 @@
                         </div>
                         <div class="methodology-tags">
                             <span class="m-tag">Landsat / Sentinel</span>
-                            <span class="m-tag">ArcGis Pro Processing</span>
+                            <span class="m-tag">ArcGis Processing</span>
                             <span class="m-tag">Python Folium</span>
                             <span class="m-tag">Spatial Analysis</span>
                         </div>
