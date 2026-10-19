@@ -715,6 +715,35 @@
             z-index: 2;
         }
 
+        /* إعطاء خلفية الإطار الأبيض والحدود لجميع روابط الشهادات */
+        #certifications .extended-section a {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+            background: rgba(255, 255, 255, 0.5) !important; /* أو استخدمي التنسيق المناسب لخلفية الكارد لديكِ */
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            text-decoration: none;
+        }
+        /* تأثير الحركة والظلال عند تمرير الفأرة على جميع الشهادات */
+        .extended-section a {
+           transition: all 0.3s ease-in-out !important; /* يجعل الحركة سلسة */
+        }
+        .extended-section a:hover {
+            transform: translateY(-3px) !important; /* تحريك الشهادة للأعلى قليلاً */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important; /* إضافة ظل خفيف أثناء التمرير */
+            opacity: 0.95;
+        }
+
+        /* موحد خطوط الفصل المتقطعة بين كافة الشهادات */
+        .extended-section a {
+            border-bottom: 1px dashed rgba(0, 0, 0, 0.15) !important;
+            padding-bottom: 12px !important;
+            margin-bottom: 12px !important;
+        }
+
         @media (max-width: 950px) {
             body { padding-top: 110px; }
             .navbar { flex-direction: column; height: auto; padding: 10px; gap: 8px; }
@@ -823,6 +852,12 @@
         /* حل مشكلة اختفاء بداية الأقسام تحت الشريط العلوي الثابت */
         #home, #about, #projects, #skills, #education, #certifications {
            scroll-margin-top: 87px;
+        }
+        /* إضافة الخط المتقطع الرمادي للخانة الثالثة في قسم التعليم */
+        #education .extended-section > div:last-child {
+            border-bottom: 1px dashed #cbd5e1 !important;
+            padding-bottom: 14px !important;
+            margin-bottom: 10px !important;
         }
     </style>
 </head>
@@ -1223,6 +1258,14 @@
         <section id="certifications">
             <div class="section-title">Certifications & Training</div>
             <div class="extended-section">
+                <a href="The ArcGIS Imagery MOOC_ Foundations and Frontiers_Certificate_10192026" target="_blank">
+                    <div>
+                       <div class="cert-title">The ArcGIS Imagery MOOC: Foundations and Frontiers ↗</div>
+                       <div class="cert-issuer">Esri</div>
+                    </div>
+                    <span class="cert-badge">Verify Credential</span>
+                </a>
+                
                 <a href="https://coursera.org/share/87e191ffcc8706b579dd419474bedc84" target="_blank" class="cert-item" style="text-decoration: none; color: inherit;">
                     <div>
                         <div class="cert-title">GIS Data Formats, Design & Quality ↗</div>
