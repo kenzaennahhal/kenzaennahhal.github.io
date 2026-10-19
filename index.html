@@ -859,6 +859,20 @@
             padding-bottom: 14px !important;
             margin-bottom: 10px !important;
         }
+
+        /* ضبط المسافة الخارجية الفاصلة فقط بين الزر والخانة السفلية */
+        .card div[style*="dashed"], 
+        .card .stat-box {
+            margin-top: 6px !important; /* مسافة صغيرة ومضبوطة بالملليتر */
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+        }
+
+        /* إرجاع المسافة العادية والطبيعية بين النصوص الداخلية لـ S5 Research و Commute Correlation */
+        .card div[style*="dashed"] > div + div,
+        .card .stat-box > div + div {
+           margin-top: 2px !important;
+        }
     </style>
 </head>
 <body>
